@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/header::headFrag('Welcome!')}" />
+<body>
+
+	<!-- Link URL Expression : @{} (경로 작성할 때 사용) -->
+	<div th:replace="~{/layout/header::gnbFrag}"></div>
+	
+	<!-- html 코드 -->
+  <img src="/images/animal1.jpg" width="100px">
+  <!--/* thymeleaf 코드 (thymeleaf 주석 형태 -> 소스보기에서 안보임) */-->
+  <img th:src="@{/images/animal1.jpg}" width="100px">
+  
+  <div id="picture"></div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/header::headFrag('BBS작성')}" />
+<script th:inline="javascript">
+  function fnList(){
+    location.href = '/bbs/list.do';
+  }
+</script>
+<body>
+
+	<!-- Link URL Expression : @{} (경로 작성할 때 사용) -->
+	<div th:replace="~{/layout/header::gnbFrag}"></div>
+	
+  <div>
+    <h1>BBS 작성</h1>
+    <form method="post" th:action="@{/bbs/add.do}">
+      <div>
+        <label for="writer">작성자</label>
+        <input type="text" id="writer" name="writer" required="required">
+      </div>
+      <div>
+        <label for="title">제목</label>
+        <input type="text" id="title" name="title" required="required">
+      </div>
+      <div>
+        <button>작성완료</button>
+        <input type="reset" value="입력초기화">
+        <input type="button" value="목록" onclick="fnList()">
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
